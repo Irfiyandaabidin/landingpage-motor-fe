@@ -67,7 +67,7 @@ With various brands</h2>
                   <Image className="relative rounded-full" src={TestimonialImage} width={96} height={96} alt="Testimonial 01" />
                 </div>
                 <blockquote className="text-xl font-medium mb-4">
-                  I'm extremely satisfied with my purchase of a second-hand motorcycle here. The bike's condition is excellent, the price is reasonable, and the process was quick and straightforward. Thanks for the satisfying shopping experience!
+                  Im extremely satisfied with my purchase of a second-hand motorcycle here. The bikes condition is excellent, the price is reasonable, and the process was quick and straightforward. Thanks for the satisfying shopping experience!
                 </blockquote>
                 <cite className="block font-bold text-lg not-italic mb-1">Darya Finger</cite>
                 <div className="text-gray-600">

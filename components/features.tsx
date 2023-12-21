@@ -86,7 +86,7 @@ Suprax 125: A rugged adventure motorcycle with an efficient engine, futuristic d
                   <div>
                     <div className="font-bold leading-snug tracking-tight mb-1">Vario: The Epitome of Urban Mobility</div>
                     <div className="text-gray-600">Vario: The Epitome of Urban Mobility
-                    Sleek, efficient, and stylish, the Vario scooter redefines urban mobility. With agile handling and modern features, it's the perfect companion for city commuters.</div>
+                    Sleek, efficient, and stylish, the Vario scooter redefines urban mobility. With agile handling and modern features, its the perfect companion for city commuters.</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
