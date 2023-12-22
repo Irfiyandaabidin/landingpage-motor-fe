@@ -10,7 +10,7 @@ const ManageMotor = () => {
 
   const handleDelete = async(id:number) => {
     try {
-      const response = await axios.delete(`http://localhost:4000/api/v1/motor/${id}`)
+      const response = await axios.delete(`${process.env.API_URL}/motor/${id}`)
       if(response.status == 200){
         alert("Success delete");
         setTriger(prev => !prev)
@@ -21,7 +21,7 @@ const ManageMotor = () => {
   }
 
   const getData = async () => {
-    const response = await axios.get("http://localhost:4000/api/v1/motor")
+    const response = await axios.get(`${process.env.API_URL}/motor`)
     setData(response.data.data.motors)
   }
 

@@ -17,7 +17,7 @@ const Page = () => {
         password,
         redirect: false,
       });
-      console.log(response);
+      console.log(process.env.API_URL);
       if (response?.ok) {
         router.push("/dashboard");
       } else {

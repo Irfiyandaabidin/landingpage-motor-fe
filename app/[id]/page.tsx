@@ -28,7 +28,7 @@ const Page = ({ params }: IParam) => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/v1/motor/${id}`,
+        `${process.env.API_URL}/motor/${id}`,
         {
           brand,
           model,
@@ -49,7 +49,7 @@ const Page = ({ params }: IParam) => {
 
   const getData = async () => {
     const response = await axios.get(
-      `http://localhost:4000/api/v1/motor/${id}`
+      `${process.env.API_URL}/motor/${id}`
     );
     setBrand(response.data.data.motor.brand);
     setYear(response.data.data.motor.year);

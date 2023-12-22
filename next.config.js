@@ -4,7 +4,8 @@ const nextConfig = {
     domains: ['ik.imagekit.io']
   },
   env: {
-    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET
+    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    API_URL: process.env.API_URL
   }
 }
 

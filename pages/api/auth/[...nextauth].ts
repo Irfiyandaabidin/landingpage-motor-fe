@@ -24,7 +24,7 @@ const nextAuthOptions:NextAuthOptions = {
       }, 
       async authorize(credentials, req) {
           const {email, password} = credentials as {email:string, password:string}
-          const response = await axios.post("http://localhost:4000/api/v1/user/login", {
+          const response = await axios.post(`${process.env.API_URL}/user/login`, {
             email,
             password
           });
@@ -42,7 +42,7 @@ const nextAuthOptions:NextAuthOptions = {
   callbacks: {
     async session({session, token}){
       console.log(token.token)
-      const response = await axios.get("http://localhost:4000/api/v1/user/me", {
+      const response = await axios.get(`${process.env.API_URL}/user/me`, {
         headers: {'Authorization': `Bearer ${token.token}`}
       });
       session.user.name = response.data.name;

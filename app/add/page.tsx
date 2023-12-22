@@ -14,7 +14,7 @@ const Page = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/v1/motor/`,
+        `${process.env.API_URL}/motor/`,
         {
           brand,
           model,

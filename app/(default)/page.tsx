@@ -13,7 +13,7 @@ export default function Home() {
   const [data, setData] = useState<IMotor[]>([]);
 
   const getData = async () => {
-    const response = await axios.get("http://localhost:4000/api/v1/motor")
+    const response = await axios.get(`${process.env.API_URL}/motor`)
     setData(response.data.data.motors)
   }
 
