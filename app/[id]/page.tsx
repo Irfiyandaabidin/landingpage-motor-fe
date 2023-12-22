@@ -1,22 +1,33 @@
+// Import necessary modules
 "use client";
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
+// Define the interface for parameters
 interface IParam {
   params: {
     id: number;
   };
 }
+
+// Define the React component
 const Page = ({ params }: IParam) => {
+  // State variables for form fields
   const [brand, setBrand] = useState<string>("");
   const [model, setModel] = useState<string>("");
   const [year, setYear] = useState<number | null>(0);
   const [price, setPrice] = useState<number | null>(0);
+  const [image, setImage] = useState<File | null>(null);
+
+  // Extract id from params
   const id = params.id;
+
+  // Router instance
   const router = useRouter();
+
+  // Use session hook
   const { data: session } = useSession({
     required: true,
     onUnauthenticated: () => {
@@ -24,29 +35,41 @@ const Page = ({ params }: IParam) => {
     },
   });
 
+  // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      const formData = new FormData();
+      formData.append("brand", brand);
+      formData.append("model", model);
+      formData.append("year", String(year));
+      formData.append("price", String(price));
+      if (image) {
+        formData.append("image", image);
+      }
+
       const response = await axios.put(
         `${process.env.API_URL}/motor/${id}`,
+        formData,
         {
-          brand,
-          model,
-          year,
-          price,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
       );
-      if (response.status == 200) {
+
+      if (response.status === 200) {
         alert("Success update");
         router.push("/dashboard");
       } else {
         alert(response.data.status);
       }
     } catch (error) {
-      console.log("catch");
+      console.log("catch", error);
     }
   };
 
+  // Fetch data on component mount
   const getData = async () => {
     const response = await axios.get(
       `${process.env.API_URL}/motor/${id}`
@@ -60,7 +83,11 @@ const Page = ({ params }: IParam) => {
   useEffect(() => {
     getData();
   }, []);
+
+  // Redirect to login if not authenticated
   if (!session) router.push("/login");
+
+  // Render the component
   return (
     <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
       <div className="container max-w-screen-lg mx-auto">
@@ -131,6 +158,18 @@ const Page = ({ params }: IParam) => {
                         placeholder="20000000"
                       />
                     </div>
+
+                    <div className="md:col-span-5">
+                      <label htmlFor="image">Image</label>
+                      <input
+                        type="file"
+                        name="image"
+                        id="image"
+                        className="mt-1"
+                        onChange={(e) => setImage(e.target.files?.[0] || null)}
+                      />
+                    </div>
+
                     <button
                       type="submit"
                       className="bg-green-500 p-2 rounded-md text-lime-100"
@@ -148,4 +187,5 @@ const Page = ({ params }: IParam) => {
   );
 };
 
+// Export the component
 export default Page;
