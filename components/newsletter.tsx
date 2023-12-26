@@ -45,7 +45,7 @@ export default function Newsletter() {
                 {/* CTA form */}
                 <form className="w-full lg:w-auto">
                   <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:mx-0">
-                    <Link className="btn text-white bg-blue-600 hover:bg-blue-700 shadow" href="https://api.whatsapp.com/send?phone=083820694404&text=Saya%20ingin%20informasi%20lebih%20lanjut%20terkait%20Metro%20Dealer">Contact</Link>
+                    <Link className="btn text-white bg-blue-600 hover:bg-blue-700 shadow" href="https://wa.link/pu1wtu">Contact</Link>
                   </div>
                   {/* Success message */}
                   {/* <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> */}

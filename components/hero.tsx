@@ -1,4 +1,5 @@
 import ModalImage from '@/public/images/metrobg.png'
+import BuyImage from '@/public/images/illustration_buy.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -24,10 +25,8 @@ export default function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-
         {/* Hero content */}
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-
           {/* Section header */}
           <div className="text-center pb-12 md:pb-16">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Find Your <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Motorcyle</span></h1>
@@ -35,7 +34,7 @@ export default function Hero() {
               <p className="text-xl text-gray-600" data-aos="zoom-y-out" data-aos-delay="150">Change your motorbike buying experience!</p>
               <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Click below for a hassle-free motorbike offer!</p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
-                  <Link className="btn mx-3 text-white bg-blue-600 hover:bg-blue-800 shadow" href="https://api.whatsapp.com/send?phone=083820694404&text=Saya%20ingin%20informasi%20lebih%20lanjut%20terkait%20Metro%20Dealer">Contact</Link>
+                  <Link className="btn mx-3 text-white bg-blue-600 hover:bg-blue-800 shadow" href="https://wa.link/pu1wtu">Contact</Link>
                   <Link className="btn text-white bg-green-400 hover:bg-green-600 shadow" href="https://maps.app.goo.gl/rFhfDWuSKUtokW3P9">Location</Link>
               </div>
             </div>
@@ -54,6 +53,27 @@ export default function Hero() {
         </div>
 
       </div>
+
+      <div className="pt-32 mb-24 sm:mb-1 md:pt-40 md:pb-3">
+          {/* Section header */}
+          <div className="text-center">
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">About <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Metro Motor</span></h1>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600" data-aos="zoom-y-out" data-aos-delay="150">Welcome to Metro Motor! I, the driving force behind our automotive passion, lead our exclusive journey. Metro Motor is more than just a vehicle seller; we offer an</p>
+              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150"> unparalleled driving experience. With our special collection, bring an unforgettable lifestyle. Join the Metro Motor community, where each vehicle reflects excellence and inspiration. Discover your dream vehicle, enjoy comfort, and experience every moment on the road with Metro Motor!</p>
+            </div>
+          </div>
+
+          {/* Hero image */}
+          <div className="relative w-ful items-center flex justify-center">
+            <Image
+              src={BuyImage}
+              alt="Hero Image"
+              width={400}
+              height={400}
+            />
+          </div>
+        </div>
     </section>
   )
 }
